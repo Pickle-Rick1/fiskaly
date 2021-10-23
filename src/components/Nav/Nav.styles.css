@@ -1,0 +1,4 @@
+.nav {
+  @apply flex items-center;
+  @apply space-x-2;
+}

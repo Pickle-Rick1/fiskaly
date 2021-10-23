@@ -1,0 +1,9 @@
+.stack {
+  @apply w-full;
+  @apply max-w-none;
+}
+.stack > div {
+  @apply max-w-screen-xl;
+  @apply mx-auto;
+  @apply px-4;
+}

@@ -1,0 +1,31 @@
+/* Load local Fiskaly Fonts */
+@font-face {
+    font-family: 'Circular';
+    src: url('../../static/fonts/CircularStd-Book.eot');
+    src: url('../../static/fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+         url('../../static/fonts/CircularStd-Book.woff') format('woff'),
+         url('../../static/fonts/CircularStd-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Circular';
+    src: url('../../static/fonts/CircularStd-Medium.eot');
+    src: url('../../static/fonts/CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../../static/fonts/CircularStd-Medium.woff') format('woff'),
+         url('../../static/fonts/CircularStd-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Circular';
+    src: url('../../static/fonts/CircularStd-Bold.eot');
+    src: url('../../static/fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../../static/fonts/CircularStd-Bold.woff') format('woff'),
+         url('../../static/fonts/CircularStd-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
