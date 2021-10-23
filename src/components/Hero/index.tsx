@@ -12,9 +12,10 @@ export const Hero: React.FC<BaseComponentProps> = () => {
             <span className="ml-4 text-sm">Visit our careers page</span>
             <ChevronRightIcon className="ml-2 w-5 h-5 text-gray-500" aria-hidden="true" />
           </a>
-          <h1 className="h1">Receipts made simple<span className="text-brand">.</span></h1>
+          <h1 className="h1">Design made simple<span className="text-brand">.</span></h1>
           <p className="text-base sm:text-lg lg:text-2xl max-w-screen-md">
-            We help point of sales developers who need to achieve fiscal compliance to experience a 1-Click rollout unlike others our solution enables a  100% automated, invisibe fiscalisation without hardware.
+            These areas of design are the foundations on which the Fiskaly Brand is built.
+            Our aim is to create consistent and delightful user experiences across all platforms.
           </p>
           <dl className="font-mono mt-8 text-gray-light">
             <dt className="text-sm">Last update</dt>
