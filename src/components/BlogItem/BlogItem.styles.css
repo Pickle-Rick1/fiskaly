@@ -1,6 +1,0 @@
-.list__item {
-  @apply bg-white;
-  @apply p-4;
-  @apply transition-all;
-  @apply hover:shadow-xl;
-}

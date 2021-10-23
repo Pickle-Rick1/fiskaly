@@ -1,12 +1,13 @@
 import React from 'react';
-import { PageProps } from 'gatsby';
-import { Blog, Layout, Hero } from '@/components';
+import { BaseComponentProps } from '@/types';
+import { Layout, Hero } from '@/components';
 
-const Home: React.FC<PageProps> = () => (
-  <Layout>
-    <Hero />
-    <Blog />
-  </Layout>
+const Home: React.FC<BaseComponentProps> = () => {
+  return (
+    <Layout>
+      <Hero />
+    </Layout>
+  )
 }
 
 export default Home;
