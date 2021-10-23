@@ -7,7 +7,7 @@ const Home: React.FC<BaseComponentProps> = () => {
     <Layout>
       <Hero />
     </Layout>
-  )
-}
+  );
+};
 
 export default Home;
