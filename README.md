@@ -1,1 +1,1 @@
-A blog created with Gatsby and Tailwind CSS.
+Experience The Fiskaly Brand
