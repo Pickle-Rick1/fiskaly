@@ -1,10 +1,12 @@
 module.exports = {
+  mode: 'jit',
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Circular"', 'ui-sans-serif', 'system-ui']
+        display: ['"DM Sans"', 'ui-sans-serif', 'system-ui'],
+        mono: ['"DM Mono"', 'ui-monospace', 'SFMono-Regular']
       },
       colors: {
         brand: {

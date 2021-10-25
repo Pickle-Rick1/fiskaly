@@ -1,18 +1,23 @@
 .headerWrapper {
-  @apply bg-gray-900;
+  @apply bg-white dark:bg-gray-900;
 }
 
 .header {
   @apply max-w-screen-xl;
   @apply mx-auto;
   @apply flex items-center;
-  @apply text-white;
+  @apply text-black dark:text-white;
   @apply px-4 py-6;
-  @apply border-b border-white border-opacity-10;
+  @apply border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10;
 }
 
 .header__left {
   @apply flex items-center flex-1;
+  @apply space-x-2;
+}
+.header__right {
+  @apply flex items-center;
+  @apply space-x-4;
 }
 
 .brand {

@@ -1,14 +1,14 @@
 import React from 'react';
 import { BaseComponentProps } from '@/types';
-import { Header, Footer } from '@/components';
+import { ThemeProvider } from '@/contexts/ThemeContext'
+import { Header, Footer, ThemeToggle } from '@/components';
 
-export const Layout: React.FC<BaseComponentProps> = (props) => {
-  const { children } = props;
+export const Layout: React.FC<BaseComponentProps> = ({ children }) => {
   return (
-    <div>
+    <ThemeProvider>
       <Header />
       <main>{children}</main>
       <Footer />
-    </div>
+    </ThemeProvider>
   );
 };
