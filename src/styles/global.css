@@ -29,10 +29,10 @@
 
   .dark {
     --color-background: #0c171a;
-    --color-background-muted: #2a2f30;
+    --color-background-muted: #232a30;
 
-    --color-text: #f9fafb;
-    --color-text-muted: #b9bec4;
+    --color-text: #fff;
+    --color-text-muted: #b8bec6;
 
     --color-focus: #fd0;
     --color-text-focus: #000;
@@ -65,9 +65,14 @@
   @apply focus:bg-skin-focus focus:text-skin-fg-focus;
 }
 
+a:hover {
+  @apply cursor-pointer;
+}
+
 h1, .h1 {
   @apply font-display;
   @apply font-semibold;
+  @apply tracking-tighter;
   @apply text-4xl sm:text-6xl lg:text-8xl;
   @apply mt-8 mb-6;
 }
@@ -75,6 +80,7 @@ h1, .h1 {
 h2, .h2 {
   @apply font-display;
   @apply font-bold;
+  @apply tracking-tight;
   @apply text-2xl sm:text-3xl lg:text-4xl;
 }
 

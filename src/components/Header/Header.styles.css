@@ -1,6 +1,5 @@
 .headerWrapper {
   @apply sticky top-0 z-10 bg-skin-header;
-  @apply shadow-sm;
 }
 
 .header {
@@ -9,7 +8,7 @@
   @apply flex items-center;
   @apply text-skin-header-fg;
   @apply px-4 py-6;
-  @apply border-b border-fg-muted;
+  @apply border-b border-skin-base-muted;
 }
 
 .header__left {
@@ -18,7 +17,7 @@
 }
 .header__right {
   @apply flex items-center;
-  @apply space-x-4;
+  @apply space-x-2;
 }
 
 .brand {

@@ -22,50 +22,29 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
       <Seo title="All articles" />
       <Hero />
       <Container>
-        <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div>
-            <h2 className="my-8">Brand</h2>
-            <ol className="flex">
-              <li className="bg-skin-primary border inline-flex items-center justify-center rounded-full w-16 h-16 mr-2"></li>
-              <li className="bg-skin-secondary border inline-flex items-center justify-center rounded-full w-16 h-16 mr-2"></li>
-            </ol>
-          </div>
-          <div>
-            <h2 className="my-8">Backgrounds</h2>
-            <ol className="flex">
-              <li className="bg-skin-base border inline-flex items-center justify-center rounded-full w-16 h-16 mr-2"></li>
-              <li className="bg-skin-base-muted border inline-flex items-center justify-center rounded-full w-16 h-16 mr-2"></li>
-              <li className="bg-skin-focus border inline-flex items-center justify-center rounded-full w-16 h-16 mr-2">
-                <span className="text-fg-focus text-xs">Focus</span>
-              </li>
-            </ol>
-          </div>
-          <div>
-            <h2 className="my-8">Text</h2>
-            <ol className="flex">
-              <li className="bg-skin-fg border inline-flex items-center justify-center rounded-full w-16 h-16 mr-2"></li>
-              <li className="bg-skin-fg-muted border inline-flex items-center justify-center rounded-full w-16 h-16 mr-2"></li>
-            </ol>
-          </div>
-        </section>
-        <ol className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 -mx-4">
+        <h2 className="my-8">Articles</h2>
+        <ol className="sm:grid md:grid-cols-2 gap-4 -mx-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <li key={node.fields.slug} className="p-4 rounded border border-transparent hover:border-fg transition-all">
+              <li
+                key={node.fields.slug}
+                className="border border-skin-base-muted group hover:bg-skin-base-muted transition-all p-4"
+                >
                 <article itemScope itemType="http://schema.org/Article">
                   <header>
-                    <small className="font-mono text-sm">
+                    <small className="font-mono text-sm text-skin-fg-muted">
                       {node.frontmatter.date}
                     </small>
-                    <h2 className="text-3xl font-display mt-3 text-brand">
+                    <h2 className="text-3xl font-display mt-3 text-skin-primary group-hover:underline group-hover:text-skin-fg">
                       <Link
                         to={node.fields.slug}
                         itemProp="url"
                         className="focus:bg-skin-focus focus:text-skin-fg-focus focus:outline-none"
                       >
                         <span itemProp="headline">{title}</span>
-                      </Link>
+                        </Link>
+
                     </h2>
                   </header>
                   <p
@@ -75,7 +54,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
                     itemProp="description"
                     className="text-lg font-yrsa text-skin-fg mt-3"
                   />
-                  <section className="md:text-sm space-x-2 mt-3">
+                  <section className="md:text-sm space-x-2 mt-3 text-skin-fg-muted">
                     {(node.frontmatter.tags || "")
                       .split(",")
                       .map((s: string) => s.trim())

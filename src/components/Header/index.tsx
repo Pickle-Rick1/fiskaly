@@ -1,4 +1,6 @@
-import React from "react"
+import React, { Fragment } from "react"
+import { Popover, Transition } from "@headlessui/react"
+import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import { Logo, Nav, ThemeSwitch } from "@/components"
 import { EmptyProps } from "@/definitions"
 
@@ -6,21 +8,29 @@ import "./Header.styles.css"
 
 export const Header: React.FC<EmptyProps> = () => {
   return (
-    <div className="headerWrapper">
+    <Popover className="headerWrapper">
       <header className="header">
         <div className="header__left">
           <div className="brand">
             <Logo />
           </div>
-          <Nav />
+          <div className="hidden md:flex">
+            <Nav />
+          </div>
         </div>
         <div className="header__right">
+          <div className="md:hidden">
+            <Popover.Button className="bg-skin-header rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg">
+              <span className="sr-only">Open menu</span>
+              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+            </Popover.Button>
+          </div>
           <ThemeSwitch />
           <a
             href="https://github.com/zeitvertrieb/fiskaly"
             title="Go to GitHub Repositiory"
             target="_blank"
-            className="h-6 w-6 rounded-full focus:outline-none focus:ring-2 focus:ring-skin-focus focus:bg-skin-focus focus:text-skin-fg-focus"
+            className="rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg"
           >
             <span className="sr-only">GitHub repository</span>
             <svg viewBox="0 0 16 16" fill="currentColor" className="w-6 h-6">
@@ -29,6 +39,41 @@ export const Header: React.FC<EmptyProps> = () => {
           </a>
         </div>
       </header>
-    </div>
+      <Transition
+        as={Fragment}
+        enter="duration-200 ease-out"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="duration-100 ease-in"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        <Popover.Panel
+          focus
+          className="z-50 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+        >
+          <div className="rounded-lg shadow-lg ring-1 ring-skin-header ring-opacity-5 bg-skin-header text-skin-header-fg border">
+            <div className="p-4">
+              <div className="z-50 flex items-center justify-between">
+                <div className="brand">
+                  <Logo />
+                </div>
+                <div className="-mr-2 -mt-2">
+                  <Popover.Button className="bg-skin-header rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg">
+                    <span className="sr-only">Close menu</span>
+                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                  </Popover.Button>
+                </div>
+              </div>
+            </div>
+            <div className="py-6 px-5 space-y-6">
+              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+                <Nav />
+              </div>
+            </div>
+          </div>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
   )
 }

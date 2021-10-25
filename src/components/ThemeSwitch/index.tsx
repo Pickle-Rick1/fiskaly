@@ -16,13 +16,19 @@ export const ThemeSwitch: React.FC<EmptyProps> = () => {
   return (
     <button
       type="button"
-      className="transition duration-500 ease-in-out rounded-full cursor-pointer h-6 w-6 rounded-full focus:outline-none focus:ring-2 focus:ring-skin-focus focus:bg-skin-focus focus:text-skin-fg-focus"
+      className="rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg"
       onClick={changeTheme}
     >
       {isDark ? (
-        <SunIcon className="text-2xl cursor-pointer" />
+        <>
+          <SunIcon className="h-6 w-6" aria-hidden="true" />
+          <span className="sr-only">Switch to light mode</span>
+        </>
       ) : (
-        <MoonIcon className="text-2xl cursor-pointer" />
+        <>
+          <MoonIcon className="h-6 w-6" aria-hidden="true" />
+          <span className="sr-only">Switch to dark mode</span>
+        </>
       )}
     </button>
   )
