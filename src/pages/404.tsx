@@ -1,12 +1,29 @@
-import React from 'react';
-import { PageProps } from 'gatsby';
-import { Link } from 'gatsby';
+import * as React from "react"
+import { graphql } from "gatsby"
 
-const NotFound: React.FC<PageProps> = () => (
-  <main>
-    <p>Sorry, page not found!</p>
-    <Link to="/">Go home</Link>
-  </main>
-);
+import { Layout, Seo } from "@/components"
+import { PageProps } from "@/definitions"
 
-export default NotFound;
+const NotFoundPage: React.FC<PageProps> = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <Seo title="404: Not Found" />
+      <h1>404: Not Found</h1>
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    </Layout>
+  )
+}
+
+export default NotFoundPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

@@ -1,7 +1,7 @@
-import React from 'react';
-import { BaseComponentProps } from '@/types';
+import React from "react"
+import { BaseComponentProps } from "@/types"
 
-import './Logo.styles.css';
+import "./Logo.styles.css"
 
 export const Logo: React.FC<BaseComponentProps> = () => {
   return (
@@ -42,5 +42,5 @@ export const Logo: React.FC<BaseComponentProps> = () => {
         fill="#2DD4BF"
       />
     </svg>
-  );
-};
+  )
+}

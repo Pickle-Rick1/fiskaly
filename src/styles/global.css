@@ -4,9 +4,65 @@
 
 @import './font.css';
 
-body {
-  @apply bg-gray-50 dark:bg-black;
-  @apply text-black dark:text-gray-50;
+@layer base {
+  html,
+  body {
+    @apply bg-skin-base text-skin-fg;
+  }
+
+  :root {
+    --color-background: #fff;
+    --color-background-muted: #EFF1F3;
+
+    --color-text: #000000;
+    --color-text-muted: #545B6F;
+
+    --color-focus: #fd0;
+    --color-text-focus: #000;
+
+    --color-primary: #2DD4BF;
+    --color-secondary: #D2B58D;
+
+    --color-header: 255, 255, 255;
+    --color-header-text: 0, 0, 0;
+  }
+
+  .dark {
+    --color-background: #0c171a;
+    --color-background-muted: #2a2f30;
+
+    --color-text: #f9fafb;
+    --color-text-muted: #b9bec4;
+
+    --color-focus: #fd0;
+    --color-text-focus: #000;
+
+    --color-primary: #2DD4BF;
+    --color-secondary: #D2B58D;
+
+    --color-header: 12, 23, 26;
+    --color-header-text: 245, 245, 245;
+  }
+}
+
+@layer utilities {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none !important;
+  }
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    background: transparent !important;
+  }
+}
+
+*:not(#gatsby-focus-wrapper):focus {
+  @apply focus:outline-none;
+  @apply focus:ring-2 focus:ring-skin-focus;
+  @apply focus:bg-skin-focus focus:text-skin-fg-focus;
 }
 
 h1, .h1 {

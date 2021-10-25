@@ -1,7 +1,7 @@
-import React from 'react';
-import { BaseComponentProps } from '@/types';
+import React from "react"
+import { BaseComponentProps } from "@/types"
 
-import './Footer.styles.css';
+import "./Footer.styles.css"
 
 export const Footer: React.FC<BaseComponentProps> = () => {
   return (
@@ -10,5 +10,5 @@ export const Footer: React.FC<BaseComponentProps> = () => {
         Copyright 2021 <span>Fiskaly.</span>
       </p>
     </footer>
-  );
-};
+  )
+}

@@ -2,3 +2,10 @@
   @apply flex items-center;
   @apply space-x-2;
 }
+
+.navLink {
+  @apply p-2;
+}
+.navLink:focus {
+  @apply focus:bg-skin-focus focus:text-skin-fg-focus focus:outline-none;
+}

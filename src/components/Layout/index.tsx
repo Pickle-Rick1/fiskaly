@@ -1,14 +1,22 @@
-import React from 'react';
-import { BaseComponentProps } from '@/types';
-import { ThemeProvider } from '@/contexts/ThemeContext'
-import { Header, Footer, ThemeToggle } from '@/components';
+import React, { ReactNode } from "react"
+import { Location } from "history"
+import { Header, Footer } from "@/components"
 
-export const Layout: React.FC<BaseComponentProps> = ({ children }) => {
+interface LayoutProps {
+  location: Location
+  title: string
+  children: ReactNode
+}
+
+export const Layout: React.FC<LayoutProps> = ({ location, children }) => {
+  // const rootPath = `${__PATH_PREFIX__}/`
+  // const isRootPath = location.pathname === rootPath
+
   return (
-    <ThemeProvider>
+    <>
       <Header />
       <main>{children}</main>
       <Footer />
-    </ThemeProvider>
-  );
-};
+    </>
+  )
+}

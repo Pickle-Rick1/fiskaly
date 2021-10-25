@@ -1,14 +1,15 @@
 .headerWrapper {
-  @apply bg-white dark:bg-gray-900;
+  @apply sticky top-0 z-10 bg-skin-header;
+  @apply shadow-sm;
 }
 
 .header {
   @apply max-w-screen-xl;
   @apply mx-auto;
   @apply flex items-center;
-  @apply text-black dark:text-white;
+  @apply text-skin-header-fg;
   @apply px-4 py-6;
-  @apply border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10;
+  @apply border-b border-fg-muted;
 }
 
 .header__left {

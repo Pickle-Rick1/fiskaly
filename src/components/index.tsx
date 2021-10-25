@@ -1,8 +1,9 @@
-export { Container } from './Container/index';
-export { Footer } from './Footer/index';
-export { Header } from './Header/index';
-export { Hero } from './Hero/index';
-export { Logo } from './Logo/index';
-export { Layout } from './Layout/index';
-export { Nav } from './Nav/index';
-export { ThemeToggle } from './ThemeToggle/index';
+export { Container } from "./Container"
+export { Footer } from "./Footer"
+export { Header } from "./Header"
+export { Hero } from "./Hero"
+export { Logo } from "./Logo"
+export { Layout } from "./Layout"
+export { Nav } from "./Nav"
+export { ThemeSwitch } from "./ThemeSwitch"
+export { Seo } from "./Seo"

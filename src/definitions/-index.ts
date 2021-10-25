@@ -1,0 +1,61 @@
+import { ReactNode } from "react"
+
+export type Pair<V, S> = [V, S]
+
+export type ValueOf<T> = T[keyof T]
+
+export interface BaseComponentProps {
+  children?: ReactNode
+  classNames?: string
+  initialTheme?: string[]
+  theme?: string[]
+  value?: string[]
+  setTheme: Function
+}
+
+interface Frontmatter {
+  title: string
+  date: string
+  tags?: string[]
+  categories?: string[]
+  image?: string
+}
+
+export interface Mdx {
+  id: string
+  frontmatter: Frontmatter
+  fields: { slug: string }
+  body: string
+  excerpt: string
+}
+
+interface PageInput {
+  path: string
+  component: string
+  layout?: string
+  context?: any
+}
+
+interface BoundActionCreators {
+  createPage: (page: PageInput) => void
+  deletePage: (page: PageInput) => void
+  createRedirect: (opts: {
+    fromPath: string
+    isPermanent?: boolean
+    redirectInBrowser?: boolean
+    toPath: string
+  }) => void
+}
+
+export type GatsbyCreatePages = (fns: {
+  graphql: any
+  boundActionCreators: BoundActionCreators
+}) => void
+
+export interface Context {
+  pageCount: number
+  currentPage: number
+  fieldValue: string
+  tags: string[]
+  categories: string[]
+}
