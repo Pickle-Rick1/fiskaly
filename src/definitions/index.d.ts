@@ -8,7 +8,13 @@ export interface ButtonProps {
   isLarge?: boolean
 }
 
-interface EmptyProps {}
+export interface MdxProps {
+  colorCode?: string
+}
+
+interface EmptyProps {
+  classNames?: string
+}
 
 interface PageProps {
   data: {
@@ -50,6 +56,7 @@ interface INode {
     slug: string
   }
   frontmatter: {
+    order: number
     date: string
     title: string
     tags?: string

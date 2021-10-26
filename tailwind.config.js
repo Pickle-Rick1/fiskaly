@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
@@ -13,15 +13,17 @@ const themes = {
   skin: {
     base: "var(--color-background)",
     "base-muted": "var(--color-background-muted)",
-    "base-md": "var(--color-background-medium)",
+    "base-flash": "var(--color-background-flash)",
     focus: "var(--color-focus)",
     "fg-focus": "var(--color-text-focus)",
-    anchor: "var(--color-anchor)",
-    "anchor-hover": "var(--color-anchor-hover)",
     fg: "var(--color-text)",
     "fg-muted": "var(--color-text-muted)",
     primary: "var(--color-primary)",
-    secondary: "var(--color-secondary)",
+    "primary-text": "var(--color-primary-contrast)",
+    "accent-copper": "var(--color-accent-copper)",
+    "accent-peach": "var(--color-accent-peach)",
+    "accent-coral": "var(--color-accent-coral)",
+    "accent-blue": "var(--color-accent-blue)",
     header: withOpacity("--color-header"),
     "header-fg": withOpacity("--color-header-text"),
   },
@@ -108,8 +110,8 @@ module.exports = {
       }),
       colors: themes.skin,
       boxShadow: {
-        button: "6px 6px 13px #70ad13, -6px -6px 13px #98eb19",
-        light: "6px 6px 13px #059bb4, -6px -6px 13px #07d1f4",
+        light:
+          "0 50px 100px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%)",
       },
       fontFamily: {
         display: ["DM Sans", ...defaultTheme.fontFamily.sans],
@@ -121,6 +123,7 @@ module.exports = {
       backgroundColor: themes,
       textColor: themes,
       borderColor: themes,
+      divideColor: themes,
       ringColor: themes,
       divideColor: themes,
       ringOffsetColor: themes,

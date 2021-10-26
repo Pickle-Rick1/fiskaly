@@ -1,6 +1,6 @@
 import { MDXProviderComponentsProp, MDXProviderProps } from "@mdx-js/react"
 import React, { ReactElement } from "react"
-import Counter from "./Counter"
+import ColorsBlock from "./ColorsBlock"
 import CodeBlock from "./CodeBlock"
 
 const preToCodeBlock = (preProps: MDXProviderProps) => {
@@ -45,7 +45,7 @@ const components: MDXProviderComponentsProp = {
       return <pre {...preProps} />
     }
   },
-  Counter,
+  ColorsBlock,
 }
 
 export default components

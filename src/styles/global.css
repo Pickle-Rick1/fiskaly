@@ -11,34 +11,39 @@
   }
 
   :root {
-    --color-background: #fff;
-    --color-background-muted: #EFF1F3;
-
-    --color-text: #000000;
-    --color-text-muted: #545B6F;
-
-    --color-focus: #fd0;
-    --color-text-focus: #000;
-
     --color-primary: #2DD4BF;
-    --color-secondary: #D2B58D;
+    --color-primary-dark: #14B8A6;
+    --color-primary-light: #99F6E4;
+    --color-primary-contrast: var(--color-primary-dark);
+
+    --color-accent-copper: #D2B58D;
+    --color-accent-peach: #ffd4c4;
+    --color-accent-coral: #ff5050;
+    --color-accent-blue: #b6d2ff;
+
+    --color-background: #f6f6f7;
+    --color-background-muted: #EFF1F3;
+    --color-background-flash: #fff;
+
+    --color-text: #000;
+    --color-text-muted: #545B6F;
 
     --color-header: 255, 255, 255;
     --color-header-text: 0, 0, 0;
-  }
-
-  .dark {
-    --color-background: #0c171a;
-    --color-background-muted: #232a30;
-
-    --color-text: #fff;
-    --color-text-muted: #b8bec6;
 
     --color-focus: #fd0;
     --color-text-focus: #000;
+  }
 
-    --color-primary: #2DD4BF;
-    --color-secondary: #D2B58D;
+  .dark {
+    --color-primary-contrast: var(--color-primary);
+
+    --color-background: #0c171a;
+    --color-background-muted: #232a30;
+    --color-background-flash: #000;
+
+    --color-text: #fff;
+    --color-text-muted: #b8bec6;
 
     --color-header: 12, 23, 26;
     --color-header-text: 245, 245, 245;
@@ -65,14 +70,22 @@
   @apply focus:bg-skin-focus focus:text-skin-fg-focus;
 }
 
+a {
+  @apply text-skin-primary-text;
+  @apply border-b border-transparent;
+}
+
 a:hover {
+  @apply text-current;
   @apply cursor-pointer;
+  @apply border-skin-fg;
+  @apply transition-all;
 }
 
 h1, .h1 {
   @apply font-display;
   @apply font-semibold;
-  @apply tracking-tighter;
+  @apply tracking-tight;
   @apply text-4xl sm:text-6xl lg:text-8xl;
   @apply mt-8 mb-6;
 }

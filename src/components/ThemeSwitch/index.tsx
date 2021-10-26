@@ -16,7 +16,7 @@ export const ThemeSwitch: React.FC<EmptyProps> = () => {
   return (
     <button
       type="button"
-      className="rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg"
+      className="rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg border border-opacity-0 hover:border-opacity-100 transition-all"
       onClick={changeTheme}
     >
       {isDark ? (

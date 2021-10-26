@@ -18,34 +18,43 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <Container>
-        <article className="article" itemScope itemType="http://schema.org/Article">
-          <header className="grid grid-cols-blog">
+        <article
+          className="article"
+          itemScope
+          itemType="http://schema.org/Article"
+        >
+          <header className="col-start-1 grid grid-cols-blog">
             <h1
-              className="col-start-2 font-black text-skin-fg text-4xl md:text-6xl"
+              className="font-black text-skin-fg text-4xl md:text-6xl"
               itemProp="headline"
             >
               {post.frontmatter.title}
             </h1>
-            <p className="col-start-2 text-skin-fg text-xl">
+            <span className="font-mono text-skin-fg-muted col-start-1">
               {post.frontmatter.date}
-            </p>
+            </span>
           </header>
-          <section itemProp="articleBody" className="prose prose-xl mt-8 mx-auto">
+          <section
+            itemProp="articleBody"
+            className="prose prose-xl mt-8 mx-auto"
+          >
             <MDXRenderer>{post.body}</MDXRenderer>
           </section>
         </article>
-        <nav className="mt-8 grid grid-cols-blog">
+        <nav className="mt-8 pt-16 grid grid-cols-blog border-t border-skin-base-muted">
           <ul className="col-start-2 text-lg flex flex-wrap justify-between">
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+                <Link to={previous.fields.slug} rel="prev" className="py-4">
+                  ← <span>{previous.frontmatter.order}.</span>{" "}
+                  {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
+                <Link to={next.fields.slug} rel="next" className="py-4">
+                  <span>{next.frontmatter.order}.</span>{" "}
                   {next.frontmatter.title} →
                 </Link>
               )}
@@ -75,6 +84,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       body
       frontmatter {
+        order
         title
         date(formatString: "MMMM DD, YYYY")
         description
@@ -86,6 +96,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        order
       }
     }
     next: mdx(id: { eq: $nextPostId }) {
@@ -94,6 +105,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        order
       }
     }
   }

@@ -1,13 +1,13 @@
 import React from "react"
-import { BaseComponentProps } from "@/types"
+import { EmptyProps } from "@/definitions"
 
 import "./Footer.styles.css"
 
-export const Footer: React.FC<BaseComponentProps> = () => {
+export const Footer: React.FC<EmptyProps> = () => {
   return (
-    <footer className="text-center py-8">
-      <p>
-        Copyright 2021 <span>Fiskaly.</span>
+    <footer className="footer">
+      <p className="copyright">
+        Copyright {new Date().getFullYear()} <span>Fiskaly GmbH</span>
       </p>
     </footer>
   )

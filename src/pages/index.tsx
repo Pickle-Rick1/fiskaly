@@ -23,45 +23,61 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
       <Hero />
       <Container>
         <h2 className="my-8">Articles</h2>
-        <ol className="sm:grid md:grid-cols-2 gap-4 -mx-4">
+        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <li
                 key={node.fields.slug}
-                className="border border-skin-base-muted group hover:bg-skin-base-muted transition-all p-4"
+                className="rounded-2xl p-4 group bg-skin-base shadow hover:shadow-light hover:z-10 hover:bg-skin-base-flash transition-all"
+              >
+                <article
+                  itemScope
+                  itemType="http://schema.org/Article"
+                  className="flex flex-col h-full"
                 >
-                <article itemScope itemType="http://schema.org/Article">
-                  <header>
-                    <small className="font-mono text-sm text-skin-fg-muted">
-                      {node.frontmatter.date}
-                    </small>
-                    <h2 className="text-3xl font-display mt-3 text-skin-primary group-hover:underline group-hover:text-skin-fg">
+                  <header className="flex space-x-2">
+                    <h2 className="text-3xl font-display mt-3 group-hover:text-skin-fg transition-all">
                       <Link
                         to={node.fields.slug}
                         itemProp="url"
-                        className="focus:bg-skin-focus focus:text-skin-fg-focus focus:outline-none"
+                        className="group-hover:text-skin-fg"
                       >
                         <span itemProp="headline">{title}</span>
-                        </Link>
-
+                      </Link>
+                      <span className="opacity-0 group-hover:opacity-100 ml-0.5 text-skin-primary">
+                        .
+                      </span>
+                      <sup className="font-mono text-skin-fg-muted text-sm -top-4">
+                        {node.frontmatter.order}
+                      </sup>
                     </h2>
                   </header>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.excerpt || node.frontmatter.description,
-                    }}
-                    itemProp="description"
-                    className="text-lg font-yrsa text-skin-fg mt-3"
-                  />
-                  <section className="md:text-sm space-x-2 mt-3 text-skin-fg-muted">
-                    {(node.frontmatter.tags || "")
-                      .split(",")
-                      .map((s: string) => s.trim())
-                      .map((s: string) => (
-                        <span key={s}>{`#${s}`}</span>
-                      ))}
+                  <section className="flex-1">
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: node.excerpt || node.frontmatter.description,
+                      }}
+                      itemProp="description"
+                      className="text-lg font-yrsa text-skin-fg mt-3"
+                    />
+                    <ul className="md:text-sm space-x-2 mt-3 text-skin-fg-muted">
+                      {(node.frontmatter.tags || "")
+                        .split(",")
+                        .map((s: string) => s.trim())
+                        .map((s: string) => (
+                          <li key={s}>{`#${s}`}</li>
+                        ))}
+                    </ul>
                   </section>
+                  <footer className="flex justify-between font-mono text-xs mt-2 pt-2 border-t border-skin-base-muted mt-2">
+                    <span className="text-skin-fg-muted">
+                      Last update: {node.frontmatter.date}
+                    </span>
+                    <Link to={node.fields.slug} itemProp="url" className="">
+                      <span>Read</span>
+                    </Link>
+                  </footer>
                 </article>
               </li>
             )
@@ -81,7 +97,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
       edges {
         node {
           excerpt
@@ -89,6 +105,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            order
             date(formatString: "MMMM DD, YYYY")
             title
             description

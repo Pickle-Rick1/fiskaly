@@ -7,12 +7,21 @@ import "./Nav.styles.css"
 export const Nav: React.FC<EmptyProps> = () => {
   return (
     <nav className="nav">
-      <ul className="flex">
-        <li className="">
-          <Link className="navLink" to="/">Explore</Link>
+      <ul className="">
+        <li className="navElem">
+          <Link className="navLink" to="/">
+            Explore
+          </Link>
         </li>
-        <li className="">
-          <Link className="navLink" to="/colors">Colors</Link>
+        <li className="navElem">
+          <Link className="navLink" to="/content">
+            Content
+          </Link>
+        </li>
+        <li className="navElem">
+          <Link className="navLink" to="/design">
+            Design
+          </Link>
         </li>
       </ul>
     </nav>
