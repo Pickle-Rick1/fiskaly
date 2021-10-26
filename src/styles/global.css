@@ -70,16 +70,11 @@
   @apply focus:bg-skin-focus focus:text-skin-fg-focus;
 }
 
-a {
+a, .prose a {
   @apply text-skin-primary-text;
   @apply border-b border-transparent;
-}
-
-a:hover {
-  @apply text-current;
-  @apply cursor-pointer;
-  @apply border-skin-fg;
-  @apply transition-all;
+  @apply transition-all no-underline;
+  @apply hover:text-current hover:cursor-pointer hover:border-skin-fg;
 }
 
 h1, .h1 {
