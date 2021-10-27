@@ -17,13 +17,13 @@ export const Hero: React.FC<EmptyProps> = () => {
         <Container classNames="">
           <section className="py-16">
             <h1 className="h1">
-              Simply Design
+              Bold Fiskaly Design
               <span className="ml-1 text-skin-primary">.</span>
             </h1>
             <p className="sm:text-lg lg:text-2xl max-w-screen-md">
               Our design system{" "}
               <strong>
-                <em>Simply</em>
+                <em>Bold</em>
               </strong>{" "}
               helps us work together to build a great experience for all of
               Fiskaly’s devs. These areas of design are the foundations on which
