@@ -26,7 +26,7 @@ export const Header: React.FC<EmptyProps> = () => {
             title="Go to GitHub Repositiory"
             target="_blank"
             rel="noopener"
-            className="rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg border border-opacity-0 hover:border-opacity-100"
+            className="button"
           >
             <span className="sr-only">GitHub repository</span>
             <svg viewBox="0 0 16 16" fill="currentColor" className="w-6 h-6">
@@ -34,7 +34,7 @@ export const Header: React.FC<EmptyProps> = () => {
             </svg>
           </a>
           <div className="md:hidden">
-            <Popover.Button className="bg-skin-header rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg">
+            <Popover.Button className="button">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -61,7 +61,7 @@ export const Header: React.FC<EmptyProps> = () => {
                   <Logo />
                 </div>
                 <div className="-mr-2 -mt-2">
-                  <Popover.Button className="bg-skin-header rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg">
+                  <Popover.Button className="button">
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>

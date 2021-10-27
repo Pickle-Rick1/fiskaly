@@ -1,0 +1,8 @@
+.lead {
+  @apply sm:text-lg lg:text-2xl;
+  @apply max-w-screen-md;
+}
+
+.kpiList {
+  @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6;
+}

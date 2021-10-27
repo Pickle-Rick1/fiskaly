@@ -1,7 +1,9 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { EmptyProps } from "@/definitions"
-import { Container } from "@/components"
+import { Container, DefinitionList, PageHeading } from "@/components"
+
+import "./Hero.styles.css"
 
 export const Hero: React.FC<EmptyProps> = () => {
   return (
@@ -16,11 +18,8 @@ export const Hero: React.FC<EmptyProps> = () => {
       render={data => (
         <Container classNames="">
           <section className="py-16">
-            <h1 className="h1">
-              Bold Fiskaly Design
-              <span className="ml-1 text-skin-primary">.</span>
-            </h1>
-            <p className="sm:text-lg lg:text-2xl max-w-screen-md">
+            <PageHeading text="Bold Fiskaly Design" />
+            <p className="lead">
               Our design system{" "}
               <strong>
                 <em>Bold</em>
@@ -30,15 +29,9 @@ export const Hero: React.FC<EmptyProps> = () => {
               the Fiskaly Brand is built. Our aim is to create consistent and
               delightful user experiences across all platforms.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
-              <dl className="font-mono mt-8 text-skin-fg-muted">
-                <dt className="text-sm">Last update</dt>
-                <dd className="text-lg">October 2021</dd>
-              </dl>
-              <dl className="font-mono mt-8 text-skin-fg-muted">
-                <dt className="text-sm">Articles</dt>
-                <dd className="text-lg">{data.allMdx.totalCount}</dd>
-              </dl>
+            <div className="kpiList">
+              <DefinitionList term="Last update" definition="October 2021" />
+              <DefinitionList term="Articles" definition={data.allMdx.totalCount} />
             </div>
           </section>
         </Container>

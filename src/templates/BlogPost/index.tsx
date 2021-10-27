@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import { Layout, Container, Seo } from "@/components"
+import { Layout, PageHeading, DefinitionList, Container, Seo } from "@/components"
 import { PageProps } from "@/definitions"
 
 import "./BlogPost.styles.css"
@@ -24,19 +24,8 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           itemType="http://schema.org/Article"
         >
           <header className="col-start-1">
-            <div>
-              <h1
-                className="font-black text-skin-fg text-4xl md:text-6xl"
-                itemProp="headline"
-              >
-                {post.frontmatter.title}
-                <span className="ml-1 text-skin-primary">.</span>
-              </h1>
-              <dl className="font-mono mt-8 text-skin-fg-muted">
-                <dt className="text-sm">Last update</dt>
-                <dd className="text-lg">{post.frontmatter.date}</dd>
-              </dl>
-            </div>
+            <PageHeading itemProp="headline" text={post.frontmatter.title} />
+            <DefinitionList term="Last update" definition={post.frontmatter.date} />
           </header>
           <section
             itemProp="articleBody"

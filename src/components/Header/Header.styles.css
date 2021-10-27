@@ -24,3 +24,11 @@
   @apply h-8;
   @apply mr-8;
 }
+
+.button {
+  @apply rounded-md;
+  @apply p-2;
+  @apply inline-flex items-center justify-center;
+  @apply text-skin-header-fg;
+  @apply border border-opacity-0 hover:border-opacity-100;
+}

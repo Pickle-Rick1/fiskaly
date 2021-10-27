@@ -16,6 +16,16 @@ interface EmptyProps {
   classNames?: string
 }
 
+interface ListProps {
+  term?: string
+  definition?: string
+}
+
+interface HeadingsProps {
+  text?: string
+  itemProp: string
+}
+
 interface PageProps {
   data: {
     mdx: INode

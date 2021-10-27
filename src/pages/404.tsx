@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
-import { Layout, Seo, Container } from "@/components"
+import { Layout, PageHeading, Seo, Container } from "@/components"
 import { PageProps } from "@/definitions"
 
 const NotFoundPage: React.FC<PageProps> = ({ data, location }) => {
@@ -12,9 +12,7 @@ const NotFoundPage: React.FC<PageProps> = ({ data, location }) => {
       <Seo title="404: Not Found" />
       <Container classNames="text-center">
         <section className="py-16">
-          <h1>
-            Sorry, Not Found<span className="ml-1 text-skin-primary">.</span>
-          </h1>
+          <PageHeading text="Sorry, Not Found" />
           <p className="my-8 text-xl">
             You just hit a route that doesn’t exist... the sadness.
           </p>

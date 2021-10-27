@@ -95,3 +95,7 @@ h2, .h2 {
 p {
   @apply mt-4;
 }
+
+.period {
+  @apply ml-1 text-skin-primary;
+}
