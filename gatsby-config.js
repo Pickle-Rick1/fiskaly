@@ -1,11 +1,12 @@
 module.exports = {
+  pathPrefix: `/fiskaly`,
   siteMetadata: {
     title: "Fiskaly Design",
     author: {
       name: `Matthias Grieder`,
     },
     description: `Design System for Fiskaly`,
-    siteUrl: `https://github.com/zeitvertrieb/fiskaly`,
+    siteUrl: `https://zeitvertrieb.github.io/fiskaly/`,
     social: {
       linkedin: `fiskaly`,
       github: `zeitvertrieb/fiskaly`,
