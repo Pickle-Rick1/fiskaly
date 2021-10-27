@@ -17,8 +17,8 @@ export const Hero: React.FC<EmptyProps> = () => {
       `}
       render={data => (
         <Container classNames="">
-          <section className="py-16">
-            <PageHeading text="Bold Fiskaly Design" />
+          <section className="">
+            <PageHeading itemProp="headline" text="Bold Fiskaly Design" />
             <p className="lead">
               Our design system{" "}
               <strong>

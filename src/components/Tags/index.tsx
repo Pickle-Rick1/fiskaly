@@ -1,6 +1,7 @@
 import React from "react"
-import { ITag } from "@/definitions"
 import { Link } from "gatsby"
+import { ITag } from "@/definitions"
+import { InlineList } from "@/components"
 
 export const Tags: React.FC<ITag> = ({ tags }) => {
 
@@ -8,7 +9,7 @@ export const Tags: React.FC<ITag> = ({ tags }) => {
     return null
   }
   return (
-    <ul className="flex space-x-2 text-sm font-mono my-2">
+    <InlineList>
       {tags
         .split(",")
         .map(tag => tag.trim())
@@ -18,6 +19,6 @@ export const Tags: React.FC<ITag> = ({ tags }) => {
             <Link to={`/tag/${tag}`}>{tag}</Link>
           </li>
         ))}
-    </ul>
+    </InlineList>
   )
 }

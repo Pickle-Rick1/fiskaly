@@ -23,7 +23,7 @@ interface ListProps {
 
 interface HeadingsProps {
   text?: string
-  itemProp: string
+  itemProp?: string
 }
 
 interface PageProps {
