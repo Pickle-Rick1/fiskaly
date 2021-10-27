@@ -23,15 +23,15 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           itemScope
           itemType="http://schema.org/Article"
         >
-          <header className="col-start-1 grid grid-cols-blog">
-            <h1
-              className="font-black text-skin-fg text-4xl md:text-6xl"
-              itemProp="headline"
-            >
-              {post.frontmatter.title}
-              <span className="ml-1 text-skin-primary">.</span>
-            </h1>
-            <div className="col-start-1">
+          <header className="col-start-1">
+            <div>
+              <h1
+                className="font-black text-skin-fg text-4xl md:text-6xl"
+                itemProp="headline"
+              >
+                {post.frontmatter.title}
+                <span className="ml-1 text-skin-primary">.</span>
+              </h1>
               <dl className="font-mono mt-8 text-skin-fg-muted">
                 <dt className="text-sm">Last update</dt>
                 <dd className="text-lg">{post.frontmatter.date}</dd>
