@@ -34,7 +34,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 800,
             },
           },
           {
@@ -80,7 +80,7 @@ module.exports = {
               {
                 allMdx(
                   limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { order: DESC, fields: [frontmatter___order] },
                 ) {
                   edges {
                     node {
@@ -88,6 +88,7 @@ module.exports = {
                       html
                       slug
                       frontmatter {
+                        order
                         title
                         date
                       }
@@ -97,7 +98,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby RSS feed",
+            title: "Fiskaly RSS feed",
           },
         ],
       },

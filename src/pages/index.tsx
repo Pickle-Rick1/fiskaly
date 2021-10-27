@@ -72,7 +72,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
                   </section>
                   <footer className="flex justify-between font-mono text-xs mt-2 pt-2 border-t border-skin-base-muted mt-2">
                     <span className="text-skin-fg-muted">
-                      Last update: {node.frontmatter.date}
+                      {node.frontmatter.date}
                     </span>
                     <Link to={node.fields.slug} itemProp="url" className="">
                       <span>Read</span>

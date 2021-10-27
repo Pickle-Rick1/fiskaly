@@ -1,5 +1,5 @@
 import React from "react"
-import theme from "prism-react-renderer/themes/shadesOfPurple"
+import theme from "prism-react-renderer/themes/vsDark"
 import Highlight, { defaultProps, Language } from "prism-react-renderer"
 
 interface CodeProps {

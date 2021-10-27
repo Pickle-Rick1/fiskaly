@@ -1,6 +1,6 @@
 import { MDXProviderComponentsProp, MDXProviderProps } from "@mdx-js/react"
 import React, { ReactElement } from "react"
-import ColorsBlock from "./ColorsBlock"
+import { ColorsPrimaryBlock, ColorsShadesBlock, ColorsAccentBlock } from "./ColorsBlock"
 import CodeBlock from "./CodeBlock"
 
 const preToCodeBlock = (preProps: MDXProviderProps) => {
@@ -39,13 +39,15 @@ const components: MDXProviderComponentsProp = {
     const props = preToCodeBlock(preProps)
     // if there's a codeString and some props, we passed the test
     if (props) {
-      return <ColorsBlock {...props} />
+      return <CodeBlock {...props} />
     } else {
       // it's possible to have a pre without a code in it
       return <pre {...preProps} />
     }
   },
-  ColorsBlock,
+  ColorsPrimaryBlock,
+  ColorsShadesBlock,
+  ColorsAccentBlock
 }
 
 export default components

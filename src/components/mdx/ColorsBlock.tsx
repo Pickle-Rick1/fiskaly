@@ -13,7 +13,7 @@ const Color: React.FC<MdxProps> = ({ children, colorCode }) => {
   )
 }
 
-const ColorsBlock: React.FC<MdxProps> = () => (
+export const ColorsPrimaryBlock: React.FC<MdxProps> = () => (
   <>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
       <Color colorCode="var(--color-primary-light)">
@@ -26,7 +26,11 @@ const ColorsBlock: React.FC<MdxProps> = () => (
         <span className="text-skin-fg-focus">Dark</span>
       </Color>
     </div>
-    <h2>Shades and Focus</h2>
+  </>
+)
+
+export const ColorsShadesBlock: React.FC<MdxProps> = () => (
+  <>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
       <Color colorCode="var(--color-background-flash)">
         <span>Background Flash</span>
@@ -47,7 +51,11 @@ const ColorsBlock: React.FC<MdxProps> = () => (
         <span className="text-header">Text Muted</span>
       </Color>
     </div>
-    <h2>Accent</h2>
+  </>
+)
+
+export const ColorsAccentBlock: React.FC<MdxProps> = () => (
+  <>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
       <Color colorCode="var(--color-accent-peach)">
         <span className="text-skin-fg-focus">Peach Accent</span>
@@ -64,5 +72,3 @@ const ColorsBlock: React.FC<MdxProps> = () => (
     </div>
   </>
 )
-
-export default ColorsBlock

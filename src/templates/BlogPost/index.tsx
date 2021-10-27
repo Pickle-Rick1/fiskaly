@@ -30,9 +30,12 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             >
               {post.frontmatter.title}
             </h1>
-            <span className="font-mono text-skin-fg-muted col-start-1">
-              {post.frontmatter.date}
-            </span>
+            <div className="col-start-1">
+              <dl className="font-mono mt-8 text-skin-fg-muted">
+                <dt className="text-sm">Last update</dt>
+                <dd className="text-lg">{post.frontmatter.date}</dd>
+              </dl>
+            </div>
           </header>
           <section
             itemProp="articleBody"
@@ -45,7 +48,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           <ul className="col-start-2 text-lg flex flex-wrap justify-between">
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev" className="py-4">
+                <Link to={previous.fields.slug} rel="prev" className="py-2">
                   ← <span>{previous.frontmatter.order}.</span>{" "}
                   {previous.frontmatter.title}
                 </Link>
@@ -53,7 +56,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next" className="py-4">
+                <Link to={next.fields.slug} rel="next" className="py-2">
                   <span>{next.frontmatter.order}.</span>{" "}
                   {next.frontmatter.title} →
                 </Link>
