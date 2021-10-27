@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { INode, PageProps } from "@/definitions"
-import { Layout, Container, Hero, Seo } from "@/components"
+import { Layout, Container, Seo } from "@/components"
 
 const Home: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -10,17 +10,15 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="All articles" />
-        <Hero />
-        <p>No blog posts found. Add markdown posts to "content/articles".</p>
+        <Seo title="Content articles" />
+        <p>No blog posts found. Add markdown posts to "content/articles" with tag "content".</p>
       </Layout>
     )
   }
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All articles" />
-      <Hero />
+      <Seo title="Content articles" />
       <Container>
         <h2 className="my-8">Articles</h2>
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4">

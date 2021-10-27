@@ -29,6 +29,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               itemProp="headline"
             >
               {post.frontmatter.title}
+              <span className="ml-1 text-skin-primary">.</span>
             </h1>
             <div className="col-start-1">
               <dl className="font-mono mt-8 text-skin-fg-muted">

@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { Link } from "gatsby"
 import { Popover, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import { Logo, Nav, ThemeSwitch } from "@/components"
@@ -67,7 +68,7 @@ export const Header: React.FC<EmptyProps> = () => {
                 </div>
               </div>
             </div>
-            <div className="py-6 px-2 space-y-6">
+            <div className="py-6 px-4 space-y-6">
               <Nav />
             </div>
           </div>
