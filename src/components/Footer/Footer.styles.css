@@ -1,9 +1,0 @@
-.footer {
-  @apply text-center;
-  @apply py-8;
-}
-
-.copyright {
-  @apply font-mono;
-  @apply text-sm text-skin-fg-muted;
-}
