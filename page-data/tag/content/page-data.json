@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-page-index-tsx",
+    "path": "/tag/content",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Fiskaly Design"}},"allMdx":{"edges":[{"node":{"frontmatter":{"order":1,"date":"October 25, 2021","title":"Brand","description":"Learn about the Fiskaly Brand, Purpose and Positioning Statement. Get the Logo Kit.","tags":"content"},"fields":{"slug":"/brand/"}}},{"node":{"frontmatter":{"order":4,"date":"October 25, 2021","title":"Icons","description":"Icons are powerful visual helpers and should be used with care.","tags":"content, design"},"fields":{"slug":"/icons/"}}}]}},"pageContext":{"tag":"content","slugs":["brand/","icons/"]}},
+    "staticQueryHashes": ["2739492478","2841359383"]}
