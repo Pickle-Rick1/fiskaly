@@ -3,7 +3,7 @@ import { wrapRootElement as wrap } from "./wrapRootElement"
 
 function setTheme() {
   if (typeof window !== "undefined") {
-    const theme = localStorage.getItem("blog-theme")
+    const theme = localStorage.getItem("theme")
 
     let selectedTheme
     if (typeof theme === "string") {
@@ -30,7 +30,7 @@ const ScriptTag = () => {
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const onRenderBody = ({ setPreBodyComponents }) => {
-  setPreBodyComponents(<ScriptTag />)
+  setPreBodyComponents(<ScriptTag key="theme" />)
 }
 
 export const wrapPageElement = wrap

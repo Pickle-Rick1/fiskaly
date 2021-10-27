@@ -1,4 +1,4 @@
-export const themeStorageKey = "blog-theme"
+export const themeStorageKey = "theme"
 
 export const getTheme = (): string => {
   if (typeof window === "undefined") return "dark"
