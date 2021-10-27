@@ -22,6 +22,7 @@ interface PageProps {
     previous: INode
     next: INode
     allMdx: {
+      totalCount: INode
       edges: IEdge[]
     }
     site: ISite

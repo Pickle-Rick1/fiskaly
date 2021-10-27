@@ -56,7 +56,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
                   <section className="flex-1">
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: node.excerpt || node.frontmatter.description,
+                        __html: node.frontmatter.description,
                       }}
                       itemProp="description"
                       className="text-lg font-yrsa text-skin-fg mt-3"
@@ -98,6 +98,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
+      totalCount
       edges {
         node {
           excerpt
