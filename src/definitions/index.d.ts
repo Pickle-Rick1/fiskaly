@@ -21,6 +21,8 @@ interface PageProps {
     mdx: INode
     previous: INode
     next: INode
+    tag: INode
+    slug: INode
     allMdx: {
       totalCount: INode
       edges: IEdge[]
@@ -48,6 +50,10 @@ interface ISite {
 
 interface IEdge {
   node: INode
+}
+
+interface ITag {
+  tags?: keyof JSX.IntrinsicElements | string
 }
 
 interface INode {

@@ -14,12 +14,12 @@ export const Nav: React.FC<EmptyProps> = () => {
           </Link>
         </li>
         <li className="navElem">
-          <Link className="navLink" to="/content">
+          <Link className="navLink" to="/tag/content">
             Content
           </Link>
         </li>
         <li className="navElem">
-          <Link className="navLink" to="/design">
+          <Link className="navLink" to="/tag/design">
             Design
           </Link>
         </li>

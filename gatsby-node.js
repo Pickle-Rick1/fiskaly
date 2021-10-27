@@ -15,8 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/BlogPost/index.tsx`)
-
+  const blogPostTemplate = path.resolve(`./src/templates/BlogPost/index.tsx`)
   // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
@@ -29,6 +28,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             node {
               id
               slug
+              frontmatter {
+                tags
+              }
             }
           }
         }
@@ -44,12 +46,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMdx.edges
-
   // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
-
+  const posts = result.data.allMdx.edges
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].node.id
@@ -57,7 +55,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].node.id
       createPage({
         path: post.node.slug,
-        component: blogPost,
+        component: blogPostTemplate,
         context: {
           id: post.node.id,
           previousPostId,
@@ -66,6 +64,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+  // Define a template for tag page
+  const tagTemplate = path.resolve(`./src/templates/TagPage/index.tsx`)
+  // Create tag pages
+  const tags = {}
+
+  result.data.allMdx.edges
+    .filter(({ node }) => node.frontmatter.tags)
+    .forEach(({ node }) => {
+      const tagsList = node.frontmatter.tags
+        .split(",")
+        .map(tag => tag.trim())
+        .filter(tag => tag.length > 0)
+
+      tagsList.forEach(tag => {
+        if (!tags[tag]) {
+          tags[tag] = []
+        }
+        tags[tag].push(node.slug)
+      })
+    })
+
+  Object.keys(tags).forEach(tag => {
+    createPage({
+      path: `/tag/${tag}`,
+      component: tagTemplate,
+      context: {
+        tag,
+        slugs: tags[tag],
+      },
+    })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

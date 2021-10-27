@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { INode, PageProps } from "@/definitions"
-import { Layout, Container, Hero, Seo } from "@/components"
+import { Layout, Container, Hero, Tags, Seo } from "@/components"
 
 const Home: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -61,14 +61,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
                       itemProp="description"
                       className="text-lg font-yrsa text-skin-fg mt-3"
                     />
-                    <ul className="md:text-sm space-x-2 mt-3 text-skin-fg-muted">
-                      {(node.frontmatter.tags || "")
-                        .split(",")
-                        .map((s: string) => s.trim())
-                        .map((s: string) => (
-                          <li key={s}>{`#${s}`}</li>
-                        ))}
-                    </ul>
+                    <Tags tags={node.frontmatter.tags} />
                   </section>
                   <footer className="flex justify-between font-mono text-xs mt-2 pt-2 border-t border-skin-base-muted mt-2">
                     <span className="text-skin-fg-muted">

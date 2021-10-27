@@ -1,26 +1,23 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react"
+import { graphql, Link } from "gatsby"
 import { INode, PageProps } from "@/definitions"
-import { Layout, Container, Seo } from "@/components"
+import { Layout, Container, Tags, Seo } from "@/components"
 
-const Home: React.FC<PageProps> = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+const TagPageTemplate: React.FC<PageProps> = ({ data, location, pageContext: { tag, slugs } }) => {
   const posts = data.allMdx.edges
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="Design articles" />
-        <p>No blog posts found. Add markdown posts to "content/articles" with tag "design".</p>
-      </Layout>
-    )
-  }
+  const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Design articles" />
+      <Seo title={` Articles taged with #${tag}`} />
       <Container>
-        <h2 className="my-8">Articles</h2>
+        <h1
+          className="font-black text-skin-fg text-4xl md:text-6xl capitalize"
+          itemProp="headline"
+        >
+          {tag}
+          <span className="ml-1 text-skin-primary">.</span>
+        </h1>
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -59,14 +56,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
                       itemProp="description"
                       className="text-lg font-yrsa text-skin-fg mt-3"
                     />
-                    <ul className="md:text-sm space-x-2 mt-3 text-skin-fg-muted">
-                      {(node.frontmatter.tags || "")
-                        .split(",")
-                        .map((s: string) => s.trim())
-                        .map((s: string) => (
-                          <li key={s}>{`#${s}`}</li>
-                        ))}
-                    </ul>
+                    <Tags tags={node.frontmatter.tags} />
                   </section>
                   <footer className="flex justify-between font-mono text-xs mt-2 pt-2 border-t border-skin-base-muted mt-2">
                     <span className="text-skin-fg-muted">
@@ -81,34 +71,36 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
             )
           })}
         </ol>
+
       </Container>
     </Layout>
   )
 }
 
-export default Home
+export default TagPageTemplate
 
 export const pageQuery = graphql`
-  query {
+  query ($slugs: [String]) {
     site {
       siteMetadata {
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___order], order: ASC }) {
-      totalCount
+    allMdx(
+      sort: { fields: frontmatter___order, order: ASC }
+      filter: { slug: { in: $slugs } }
+    ) {
       edges {
         node {
-          excerpt
-          fields {
-            slug
-          }
           frontmatter {
             order
             date(formatString: "MMMM DD, YYYY")
             title
             description
             tags
+          }
+          fields {
+            slug
           }
         }
       }
