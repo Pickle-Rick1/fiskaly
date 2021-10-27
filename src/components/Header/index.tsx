@@ -1,5 +1,4 @@
 import React, { Fragment } from "react"
-import { Link } from "gatsby"
 import { Popover, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import { Logo, Nav, ThemeSwitch } from "@/components"

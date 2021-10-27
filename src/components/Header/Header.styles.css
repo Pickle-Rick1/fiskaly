@@ -1,5 +1,6 @@
 .headerWrapper {
   @apply sticky top-0 z-10 bg-skin-header;
+  @apply bg-opacity-80 backdrop-filter backdrop-blur-md;
 }
 
 .header {
