@@ -1,1 +1,1 @@
-export { PageHeading } from "./PageHeading"
+export { CalloutHeading } from "./CalloutHeading"

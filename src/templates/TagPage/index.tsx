@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { INode, PageProps } from "@/definitions"
-import { Layout, PageHeading, Container, Tags, Seo } from "@/components"
+import { Layout, CalloutHeading, Container, Tags, Seo } from "@/components"
 
 const TagPageTemplate: React.FC<PageProps> = ({ data, location, pageContext: { tag, slugs } }) => {
   const posts = data.allMdx.edges
@@ -11,14 +11,14 @@ const TagPageTemplate: React.FC<PageProps> = ({ data, location, pageContext: { t
     <Layout location={location} title={siteTitle}>
       <Seo title={` Articles taged with #${tag}`} />
       <Container>
-        <PageHeading itemProp="headline" text={tag} />
+        <CalloutHeading itemProp="headline" text={tag} />
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <li
                 key={node.fields.slug}
-                className="rounded-2xl p-4 group bg-skin-base shadow hover:shadow-light hover:z-10 hover:bg-skin-base-flash transition-all"
+                className="card group"
               >
                 <article
                   itemScope

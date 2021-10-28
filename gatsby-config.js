@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/fiskaly`,
   siteMetadata: {
-    title: "Fiskaly Design",
+    title: "Bold Fiskaly Design",
     author: {
       name: `Matthias Grieder`,
     },
@@ -101,7 +101,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Fiskaly RSS feed",
+            title: "Fiskaly Bold RSS feed",
           },
         ],
       },
@@ -109,8 +109,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Fiskaly Design`,
-        short_name: `Fiskaly`,
+        name: `Bold Fiskaly Design`,
+        short_name: `Bold`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#2DD4BF`,

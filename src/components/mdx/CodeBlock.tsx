@@ -1,6 +1,7 @@
 import React from "react"
-import theme from "prism-react-renderer/themes/vsDark"
 import Highlight, { defaultProps, Language } from "prism-react-renderer"
+
+import "@/styles/prism-theme.css"
 
 interface CodeProps {
   codeString: string
@@ -12,7 +13,7 @@ const Code: React.FC<CodeProps> = ({ codeString, language }) => {
   return (
     <Highlight
       {...defaultProps}
-      theme={theme}
+      theme={undefined}
       code={codeString}
       language={language}
     >

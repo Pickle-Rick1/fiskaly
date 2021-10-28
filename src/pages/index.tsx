@@ -29,7 +29,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
             return (
               <li
                 key={node.fields.slug}
-                className="rounded-2xl p-4 group bg-skin-base shadow hover:shadow-light hover:z-10 hover:bg-skin-base-flash transition-all"
+                className="card group"
               >
                 <article
                   itemScope

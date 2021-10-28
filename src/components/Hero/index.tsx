@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { EmptyProps } from "@/definitions"
-import { Container, DefinitionList, PageHeading } from "@/components"
+import { Container, DefinitionList, CalloutHeading } from "@/components"
 
 import "./Hero.styles.css"
 
@@ -16,9 +16,9 @@ export const Hero: React.FC<EmptyProps> = () => {
         }
       `}
       render={data => (
-        <Container classNames="">
-          <section className="">
-            <PageHeading itemProp="headline" text="Bold Fiskaly Design" />
+        <Container>
+          <section>
+            <CalloutHeading itemProp="headline" text="Bold Fiskaly Design" />
             <p className="lead">
               Our design system{" "}
               <strong>

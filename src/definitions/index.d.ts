@@ -1,6 +1,7 @@
 import { Location } from "history"
 
 export interface ButtonProps {
+  type: "button" | "submit" | "reset"
   children: ReactNode
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   href?: string
