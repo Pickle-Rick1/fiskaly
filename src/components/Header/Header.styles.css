@@ -1,5 +1,5 @@
 .headerWrapper {
-  @apply sticky top-0 z-10 bg-skin-header;
+  @apply sticky top-0 z-20 bg-skin-header;
   /* @apply bg-opacity-60 firefox:bg-opacity-90 backdrop-filter backdrop-blur-lg; */
   /* TODO: find issue why apply does not work */
   /* backdrop-filter: var(--tw-backdrop-blur); */
@@ -26,6 +26,8 @@
 .brand {
   @apply h-8;
   @apply mr-8;
+  @apply text-skin-header-fg;
+  @apply border-transparent hover:border-transparent;
 }
 
 .button {

@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { Link } from "gatsby"
 import { Popover, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import { Logo, Nav, ThemeSwitch } from "@/components"
@@ -11,9 +12,9 @@ export const Header: React.FC<EmptyProps> = () => {
     <Popover className="headerWrapper">
       <header className="header">
         <div className="header__left">
-          <div className="brand">
+          <Link to="/" className="brand">
             <Logo />
-          </div>
+          </Link>
           <div className="hidden md:flex">
             <Nav />
           </div>

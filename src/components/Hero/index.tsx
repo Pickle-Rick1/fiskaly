@@ -18,7 +18,7 @@ export const Hero: React.FC<EmptyProps> = () => {
       render={data => (
         <Container>
           <section>
-            <CalloutHeading itemProp="headline" text="Bold Fiskaly Design" />
+            <CalloutHeading itemProp="headline" text="Hello, Bold" />
             <p className="lead">
               Our design system{" "}
               <strong>

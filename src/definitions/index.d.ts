@@ -14,7 +14,6 @@ export interface MdxProps {
 }
 
 interface EmptyProps {
-  classNames?: string
 }
 
 interface ListProps {
@@ -25,6 +24,15 @@ interface ListProps {
 interface HeadingsProps {
   text?: string
   itemProp?: string
+}
+
+interface ArticleCardProps {
+  link?: any
+  title?: string
+  order?: number
+  description?: any
+  tags?: keyof JSX.IntrinsicElements | string
+  date?: string
 }
 
 interface PageProps {

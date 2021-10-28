@@ -27,6 +27,9 @@
     "clean": "gatsby clean",
     "tsc": "tsc",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "docz:serve": "docz build && docz serve",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -b gh-pages"
   },
   "dependencies": {
@@ -39,7 +42,6 @@
     "framer-motion": "^4.1.17",
     "gatsby": "^4.0.1",
     "gatsby-plugin-feed": "^4.0.0",
-    "gatsby-plugin-google-analytics": "^3.13.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-manifest": "^4.0.0",
     "gatsby-plugin-mdx": "^2.13.0",

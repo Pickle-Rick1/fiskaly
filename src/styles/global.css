@@ -86,7 +86,7 @@ h1, .h1 {
   @apply font-display;
   @apply font-semibold;
   @apply tracking-tight;
-  @apply text-4xl sm:text-6xl lg:text-8xl;
+  @apply text-5xl sm:text-6xl lg:text-8xl;
   @apply mt-8 mb-6;
 }
 
@@ -99,13 +99,4 @@ h2, .h2 {
 
 .period {
   @apply ml-1 text-skin-primary;
-}
-
-.card {
-  @apply p-4;
-  @apply bg-skin-base;
-  @apply shadow;
-  @apply rounded-none sm:rounded-xl;
-  @apply transition-all;
-  @apply hover:shadow-light hover:z-10 hover:bg-skin-base-flash;
 }

@@ -3,9 +3,9 @@ import { EmptyProps } from "@/definitions"
 
 import "./Container.styles.css"
 
-export const Container: React.FC<EmptyProps> = ({ children, classNames }) => {
+export const Container: React.FC<EmptyProps> = ({ children }) => {
   return (
-    <div className={"stack " + classNames}>
+    <div className="container">
       <div>{children}</div>
     </div>
   )

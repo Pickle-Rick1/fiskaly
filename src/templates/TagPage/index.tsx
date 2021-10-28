@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { INode, PageProps } from "@/definitions"
-import { Layout, CalloutHeading, Container, Tags, Seo } from "@/components"
+import { Layout, CalloutHeading, ArticleCard, Container, Seo } from "@/components"
 
 const TagPageTemplate: React.FC<PageProps> = ({ data, location, pageContext: { tag, slugs } }) => {
   const posts = data.allMdx.edges
@@ -18,49 +18,15 @@ const TagPageTemplate: React.FC<PageProps> = ({ data, location, pageContext: { t
             return (
               <li
                 key={node.fields.slug}
-                className="card group"
               >
-                <article
-                  itemScope
-                  itemType="http://schema.org/Article"
-                  className="flex flex-col h-full"
-                >
-                  <header className="flex space-x-2">
-                    <h2 className="text-3xl font-display mt-3 group-hover:text-skin-fg transition-all">
-                      <Link
-                        to={node.fields.slug}
-                        itemProp="url"
-                        className="group-hover:text-skin-fg"
-                      >
-                        <span itemProp="headline">{title}</span>
-                      </Link>
-                      <span className="opacity-0 group-hover:opacity-100 ml-0.5 text-skin-primary">
-                        .
-                      </span>
-                      <sup className="font-mono text-skin-fg-muted text-sm -top-4">
-                        {node.frontmatter.order}
-                      </sup>
-                    </h2>
-                  </header>
-                  <section className="flex-1">
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description,
-                      }}
-                      itemProp="description"
-                      className="text-lg font-yrsa text-skin-fg mt-3"
-                    />
-                    <Tags tags={node.frontmatter.tags} />
-                  </section>
-                  <footer className="flex justify-between font-mono text-xs mt-2 pt-2 border-t border-skin-base-muted mt-2">
-                    <span className="text-skin-fg-muted">
-                      {node.frontmatter.date}
-                    </span>
-                    <Link to={node.fields.slug} itemProp="url" className="">
-                      <span>Read</span>
-                    </Link>
-                  </footer>
-                </article>
+                <ArticleCard
+                  link={node.fields.slug}
+                  title={title}
+                  order={node.frontmatter.order}
+                  description={node.frontmatter.description}
+                  tags={node.frontmatter.tags}
+                  date={node.frontmatter.date}
+                />
               </li>
             )
           })}

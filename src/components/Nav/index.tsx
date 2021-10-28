@@ -1,6 +1,6 @@
 import React from "react"
-import { EmptyProps } from "@/definitions"
 import { Link } from "gatsby"
+import { EmptyProps } from "@/definitions"
 
 import "./Nav.styles.css"
 
@@ -21,6 +21,11 @@ export const Nav: React.FC<EmptyProps> = () => {
         <li className="navElem">
           <Link className="navLink" to="/tag/design">
             Design
+          </Link>
+        </li>
+        <li className="navElem">
+          <Link className="navLink" to="/docs">
+            Docs
           </Link>
         </li>
       </ul>
