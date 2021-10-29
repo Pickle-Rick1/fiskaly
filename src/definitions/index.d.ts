@@ -11,10 +11,12 @@ export interface ButtonProps {
 
 export interface MdxProps {
   colorCode?: string
+  colorName?: string
+  colorHEX?: string
+  colors?: sting[]
 }
 
-interface EmptyProps {
-}
+interface EmptyProps {}
 
 interface ListProps {
   term?: string
@@ -31,7 +33,7 @@ interface ArticleCardProps {
   title?: string
   order?: number
   description?: any
-  tags?: keyof JSX.IntrinsicElements | string
+  tags?: keyof JSX.IntrinsicElements | string
   date?: string
 }
 
@@ -72,7 +74,7 @@ interface IEdge {
 }
 
 interface ITag {
-  tags?: keyof JSX.IntrinsicElements | string
+  tags?: keyof JSX.IntrinsicElements | string
 }
 
 interface INode {

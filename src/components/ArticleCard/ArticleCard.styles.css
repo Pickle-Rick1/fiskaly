@@ -1,11 +1,9 @@
 .card {
   @apply flex flex-col h-full;
   @apply p-4;
-  @apply bg-skin-base-flash;
-  @apply shadow;
   @apply rounded-none md:rounded-xl;
   @apply transition-all;
-  @apply hover:shadow-light hover:z-10;
+  @apply hover:bg-skin-base-flash hover:shadow-light hover:z-10;
 }
 
 .card__header {

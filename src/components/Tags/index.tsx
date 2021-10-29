@@ -4,7 +4,6 @@ import { ITag } from "@/definitions"
 import { InlineList } from "@/components"
 
 export const Tags: React.FC<ITag> = ({ tags }) => {
-
   if (!tags) {
     return null
   }

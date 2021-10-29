@@ -18,11 +18,11 @@ export const Hero: React.FC<EmptyProps> = () => {
       render={data => (
         <Container>
           <section>
-            <CalloutHeading itemProp="headline" text="Hello, Bold" />
+            <CalloutHeading itemProp="headline" text="Design System" />
             <p className="lead">
-              Our design system{" "}
+              Our{" "}
               <strong>
-                <em>Bold</em>
+                <em>Design System</em>
               </strong>{" "}
               helps us work together to build a great experience for all of
               Fiskaly’s devs. These areas of design are the foundations on which
@@ -31,7 +31,10 @@ export const Hero: React.FC<EmptyProps> = () => {
             </p>
             <div className="kpiList">
               <DefinitionList term="Last update" definition="October 2021" />
-              <DefinitionList term="Articles" definition={data.allMdx.totalCount} />
+              <DefinitionList
+                term="Articles"
+                definition={data.allMdx.totalCount}
+              />
             </div>
           </section>
         </Container>

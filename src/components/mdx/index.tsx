@@ -1,8 +1,10 @@
 import { MDXProviderComponentsProp, MDXProviderProps } from "@mdx-js/react"
 import React, { ReactElement } from "react"
 import {
+  ColorPicker,
   ColorsPrimaryBlock,
-  ColorsShadesBlock,
+  ColorsBackgroundsBlock,
+  ColorsTextBlock,
   ColorsAccentBlock,
 } from "./ColorsBlock"
 import CodeBlock from "./CodeBlock"
@@ -49,8 +51,10 @@ const components: MDXProviderComponentsProp = {
       return <pre {...preProps} />
     }
   },
+  ColorPicker,
   ColorsPrimaryBlock,
-  ColorsShadesBlock,
+  ColorsBackgroundsBlock,
+  ColorsTextBlock,
   ColorsAccentBlock,
 }
 

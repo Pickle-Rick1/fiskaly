@@ -8,10 +8,7 @@ interface LayoutProps {
   children: ReactNode
 }
 
-export const Layout: React.FC<LayoutProps> = ({ location, children }) => {
-  // const rootPath = `${__PATH_PREFIX__}/`
-  // const isRootPath = location.pathname === rootPath
-
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />

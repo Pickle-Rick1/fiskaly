@@ -27,10 +27,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <li
-                key={node.fields.slug}
-                className="group"
-              >
+              <li key={node.fields.slug} className="group">
                 <ArticleCard
                   link={node.fields.slug}
                   title={title}

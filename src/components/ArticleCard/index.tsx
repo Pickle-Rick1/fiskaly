@@ -5,9 +5,15 @@ import { Tags } from "@/components"
 
 import "./ArticleCard.styles.css"
 
-export const ArticleCard: React.FC<ArticleCardProps> = ({ link, title, order, description, tags, date }) => {
+export const ArticleCard: React.FC<ArticleCardProps> = ({
+  link,
+  title,
+  order,
+  description,
+  tags,
+  date,
+}) => {
   return (
-
     <article
       itemScope
       itemType="http://schema.org/Article"
@@ -15,18 +21,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ link, title, order, de
     >
       <header className="card__header">
         <h2 className="cardTitle">
-          <Link
-            to={link}
-            itemProp="url"
-          >
+          <Link to={link} itemProp="url">
             <span itemProp="headline">{title}</span>
           </Link>
-          <span className="cardTitle__period">
-            .
-          </span>
-          <sup className="cardTitle__order">
-            {order}
-          </sup>
+          <span className="cardTitle__period">.</span>
+          <sup className="cardTitle__order">{order}</sup>
         </h2>
       </header>
       <section className="card__body">
@@ -40,9 +39,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ link, title, order, de
         <Tags tags={tags} />
       </section>
       <footer className="card__footer">
-        <span>
-          {date}
-        </span>
+        <span>{date}</span>
         <Link to={link} itemProp="url">
           <span>Read</span>
         </Link>

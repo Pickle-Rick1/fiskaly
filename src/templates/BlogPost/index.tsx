@@ -2,7 +2,13 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import { Layout, CalloutHeading, DefinitionList, Container, Seo } from "@/components"
+import {
+  Layout,
+  CalloutHeading,
+  DefinitionList,
+  Container,
+  Seo,
+} from "@/components"
 import { PageProps } from "@/definitions"
 
 import "./BlogPost.styles.css"
@@ -25,7 +31,10 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         >
           <header className="col-start-1">
             <CalloutHeading itemProp="headline" text={post.frontmatter.title} />
-            <DefinitionList term="Last update" definition={post.frontmatter.date} />
+            <DefinitionList
+              term="Last update"
+              definition={post.frontmatter.date}
+            />
           </header>
           <section
             itemProp="articleBody"

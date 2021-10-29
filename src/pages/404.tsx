@@ -12,9 +12,9 @@ const NotFoundPage: React.FC<PageProps> = ({ data, location }) => {
       <Seo title="404: Not Found" />
       <Container>
         <section className="">
-          <CalloutHeading text="Sorry, Not Found" />
+          <CalloutHeading text="Sorry" />
           <p className="my-8 text-xl">
-            You just hit a route that doesn’t exist... the sadness.
+            The content you are looking for could not be found.
           </p>
           <Link className="text-xl" to="/">
             Back Home

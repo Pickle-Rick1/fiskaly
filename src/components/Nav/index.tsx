@@ -1,33 +1,25 @@
 import React from "react"
 import { Link } from "gatsby"
-import { EmptyProps } from "@/definitions"
 
 import "./Nav.styles.css"
 
-export const Nav: React.FC<EmptyProps> = () => {
+export const Nav = (props: { links: Array<{ name: string; to: string }> }) => {
+  const { links } = props
+  const NavLinks: any = () =>
+    links.map((link: { name: string; to: string }) => {
+      return (
+        <li key={link.name}>
+          <Link className="navLink" to={link.to}>
+            {link.name}
+          </Link>
+        </li>
+      )
+    })
+
   return (
     <nav className="nav">
-      <ul className="">
-        <li className="navElem">
-          <Link className="navLink" to="/">
-            Explore
-          </Link>
-        </li>
-        <li className="navElem">
-          <Link className="navLink" to="/tag/content">
-            Content
-          </Link>
-        </li>
-        <li className="navElem">
-          <Link className="navLink" to="/tag/design">
-            Design
-          </Link>
-        </li>
-        <li className="navElem">
-          <Link className="navLink" to="/docs">
-            Docs
-          </Link>
-        </li>
+      <ul>
+        <NavLinks />
       </ul>
     </nav>
   )

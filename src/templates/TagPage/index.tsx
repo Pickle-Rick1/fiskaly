@@ -1,9 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { INode, PageProps } from "@/definitions"
-import { Layout, CalloutHeading, ArticleCard, Container, Seo } from "@/components"
+import {
+  Layout,
+  CalloutHeading,
+  ArticleCard,
+  Container,
+  Seo,
+} from "@/components"
 
-const TagPageTemplate: React.FC<PageProps> = ({ data, location, pageContext: { tag, slugs } }) => {
+const TagPageTemplate: React.FC<PageProps> = ({
+  data,
+  location,
+  pageContext: { tag, slugs },
+}) => {
   const posts = data.allMdx.edges
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
@@ -16,9 +26,7 @@ const TagPageTemplate: React.FC<PageProps> = ({ data, location, pageContext: { t
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <li
-                key={node.fields.slug}
-              >
+              <li key={node.fields.slug}>
                 <ArticleCard
                   link={node.fields.slug}
                   title={title}
@@ -31,7 +39,6 @@ const TagPageTemplate: React.FC<PageProps> = ({ data, location, pageContext: { t
             )
           })}
         </ol>
-
       </Container>
     </Layout>
   )

@@ -7,7 +7,16 @@ import { EmptyProps } from "@/definitions"
 
 import "./Header.styles.css"
 
+const navigation = {
+  links: [
+    { name: "Explore", to: "/" },
+    { name: "Content", to: "/tag/content" },
+    { name: "Design", to: "/tag/design" },
+  ],
+}
+
 export const Header: React.FC<EmptyProps> = () => {
+  const { links } = navigation
   return (
     <Popover className="headerWrapper">
       <header className="header">
@@ -16,7 +25,7 @@ export const Header: React.FC<EmptyProps> = () => {
             <Logo />
           </Link>
           <div className="hidden md:flex">
-            <Nav />
+            <Nav links={links} />
           </div>
         </div>
         <div className="header__right">
@@ -69,7 +78,7 @@ export const Header: React.FC<EmptyProps> = () => {
               </div>
             </div>
             <div className="py-6 px-4 space-y-6">
-              <Nav />
+              <Nav links={links} />
             </div>
           </div>
         </Popover.Panel>

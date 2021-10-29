@@ -1,5 +1,5 @@
-const plugin = require('tailwindcss/plugin');
-const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin")
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
@@ -25,6 +25,7 @@ const themes = {
     "accent-peach": "var(--color-accent-peach)",
     "accent-coral": "var(--color-accent-coral)",
     "accent-blue": "var(--color-accent-blue)",
+    "fg-accent": "var(--color-accent-contrast)",
     header: withOpacity("--color-header"),
     "header-fg": withOpacity("--color-header-text"),
   },
@@ -49,7 +50,7 @@ module.exports = {
           css: {
             color: theme("colors.fg-muted"),
             a: {
-              color: theme("colors.anchor"),
+              color: theme("colors.primary"),
               "&:hover": {
                 color: theme("colors.anchor-hover"),
               },
@@ -138,19 +139,19 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     plugin(function ({ addVariant, e, postcss }) {
-      addVariant('firefox', ({ container, separator }) => {
+      addVariant("firefox", ({ container, separator }) => {
         const isFirefoxRule = postcss.atRule({
-          name: '-moz-document',
-          params: 'url-prefix()',
-        });
-        isFirefoxRule.append(container.nodes);
-        container.append(isFirefoxRule);
-        isFirefoxRule.walkRules((rule) => {
+          name: "-moz-document",
+          params: "url-prefix()",
+        })
+        isFirefoxRule.append(container.nodes)
+        container.append(isFirefoxRule)
+        isFirefoxRule.walkRules(rule => {
           rule.selector = `.${e(
             `firefox${separator}${rule.selector.slice(1)}`
-          )}`;
-        });
-      });
+          )}`
+        })
+      })
     }),
   ],
 }

@@ -1,9 +1,9 @@
 import React from "react"
-import { BaseComponentProps } from "@/types"
+import { EmptyProps } from "@/definitions"
 
 import "./Logo.styles.css"
 
-export const Logo: React.FC<BaseComponentProps> = () => {
+export const Logo: React.FC<EmptyProps> = () => {
   return (
     <svg
       className="logoSVG"
@@ -39,7 +39,7 @@ export const Logo: React.FC<BaseComponentProps> = () => {
       </g>
       <path
         d="M605.372 142.315C601.791 138.799 600 134.501 600 129.422C600 124.343 601.791 120.045 605.372 116.528C608.954 113.012 613.251 111.254 618.266 111.254C623.215 111.254 627.512 113.012 631.159 116.528C634.806 120.045 636.629 124.343 636.629 129.422C636.629 134.501 634.838 138.799 631.257 142.315C627.675 145.832 623.345 147.59 618.266 147.59C613.186 147.59 608.889 145.832 605.372 142.315Z"
-        fill="#2DD4BF"
+        fill="var(--color-primary)"
       />
     </svg>
   )
