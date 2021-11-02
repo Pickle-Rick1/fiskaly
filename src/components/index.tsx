@@ -1,5 +1,6 @@
 export { ArticleCard } from "./ArticleCard"
 export { Container } from "./Container"
+export { Button } from "./Button"
 export { Footer } from "./Footer"
 export { Header } from "./Header"
 export { Hero } from "./Hero"

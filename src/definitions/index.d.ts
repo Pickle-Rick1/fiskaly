@@ -1,14 +1,5 @@
 import { Location } from "history"
 
-export interface ButtonProps {
-  type: "button" | "submit" | "reset"
-  children: ReactNode
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
-  href?: string
-  label?: string
-  isLarge?: boolean
-}
-
 export interface MdxProps {
   colorCode?: string
   colorName?: string

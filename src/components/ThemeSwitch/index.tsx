@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { MoonIcon, SunIcon } from "@heroicons/react/outline"
 import { EmptyProps } from "@/definitions"
+import { Button } from "@/components"
 import { getTheme, setDarkMode, setLightMode } from "@/utils/fns"
 
 export const ThemeSwitch: React.FC<EmptyProps> = () => {
@@ -14,11 +15,7 @@ export const ThemeSwitch: React.FC<EmptyProps> = () => {
     }
   }
   return (
-    <button
-      type="button"
-      className="rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg border border-opacity-0 hover:border-opacity-100 transition-all"
-      onClick={changeTheme}
-    >
+    <Button as="button" styleType="default" onClick={changeTheme}>
       {isDark ? (
         <>
           <SunIcon className="h-6 w-6" aria-hidden="true" />
@@ -30,6 +27,6 @@ export const ThemeSwitch: React.FC<EmptyProps> = () => {
           <span className="sr-only">Switch to dark mode</span>
         </>
       )}
-    </button>
+    </Button>
   )
 }

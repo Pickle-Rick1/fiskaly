@@ -5,7 +5,7 @@ Our aim is to create consistent and delightful user experiences across all platf
 
 ## Documentation
 
-Fiskaly Design System is documented at https://zeitvertrieb.github.io/fiskaly/.
+Fiskaly Design is documented at https://zeitvertrieb.github.io/fiskaly/.
 The documentation is hosted on Github Pages and built with Gatsby and Gatsby MDX.
 
 ## Contribute

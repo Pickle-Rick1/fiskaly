@@ -20,7 +20,9 @@
 }
 .header__right {
   @apply flex items-center;
-  @apply space-x-2;
+}
+.header__right > * {
+  @apply ml-2;
 }
 
 .brand {
@@ -28,12 +30,4 @@
   @apply mr-8;
   @apply text-skin-header-fg;
   @apply border-transparent hover:border-transparent;
-}
-
-.button {
-  @apply rounded-md;
-  @apply p-2;
-  @apply inline-flex items-center justify-center;
-  @apply text-skin-header-fg;
-  @apply border border-opacity-0 hover:border-opacity-100;
 }
