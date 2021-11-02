@@ -13,6 +13,7 @@ export interface MdxProps {
   colorCode?: string
   colorName?: string
   colorHEX?: string
+  colorHEXDark: string
   colors?: sting[]
 }
 

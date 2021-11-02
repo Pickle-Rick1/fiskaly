@@ -3,9 +3,9 @@
 Welcome to the design system documentation of Fiskaly.
 Our aim is to create consistent and delightful user experiences across all platforms.
 
-## documentation
+## Documentation
 
-Thumbprint is documented at https://zeitvertrieb.github.io/fiskaly/.
+Fiskaly Design System is documented at https://zeitvertrieb.github.io/fiskaly/.
 The documentation is hosted on Github Pages and built with Gatsby and Gatsby MDX.
 
 ## Contribute

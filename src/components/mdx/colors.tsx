@@ -1,7 +1,7 @@
 export const getColorPalette = (wait = 200): Promise<string[]> =>
   new Promise(resolve => {
-    setTimeout(() => resolve(colorPalette), wait);
-  });
+    setTimeout(() => resolve(colorPalette), wait)
+  })
 
 const colorPalette = [
   "#99f6e4",
@@ -26,4 +26,4 @@ const colorPalette = [
   "#d3e4ff",
   "#b6d2ff",
   "#6d7e99",
-];
+]
