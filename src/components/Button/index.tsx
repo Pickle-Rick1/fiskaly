@@ -1,33 +1,33 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import type { LinkProps } from 'react-router-dom'
+import * as React from "react"
+import { Link } from "gatsby"
+import type { LinkProps } from "react-router-dom"
 
 import "./Button.styles.css"
 
 type BaseProps = {
   children: React.ReactNode
   className?: string
-  styleType: 'primary' | 'default' | 'ghost'
+  styleType: "primary" | "default" | "ghost"
 }
 
 type ButtonAsButton = BaseProps &
   Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> & {
-    as?: 'button' | 'submit' | 'reset'
+    as?: "button" | "submit" | "reset"
   }
 
-type ButtonAsUnstyled = Omit<ButtonAsButton, 'as' | 'styleType'> & {
-  as: 'unstyled'
-  styleType?: BaseProps['styleType']
+type ButtonAsUnstyled = Omit<ButtonAsButton, "as" | "styleType"> & {
+  as: "unstyled"
+  styleType?: BaseProps["styleType"]
 }
 
 type ButtonAsLink = BaseProps &
   Omit<LinkProps, keyof BaseProps> & {
-    as: 'link'
+    as: "link"
   }
 
 type ButtonAsExternal = BaseProps &
   Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps> & {
-    as: 'externalLink'
+    as: "externalLink"
   }
 
 type ButtonProps =

@@ -4,4 +4,5 @@
   @apply inline-flex items-center justify-center;
   @apply text-skin-header-fg;
   @apply border border-opacity-0 hover:border-opacity-100;
+  @apply transition-all;
 }

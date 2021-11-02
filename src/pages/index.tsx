@@ -22,7 +22,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
       <Seo title="All articles" />
       <Hero />
       <Container>
-        <h2 className="my-8">Articles</h2>
+        <h2 className="my-8 pt-8">Articles</h2>
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 -mx-4">
           {posts.map(({ node }: { node: INode }) => {
             const title = node.frontmatter.title || node.fields.slug
