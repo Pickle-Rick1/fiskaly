@@ -2,8 +2,6 @@
   @apply sticky top-0 z-20;
   @apply bg-skin-header bg-opacity-90 dark:bg-opacity-90;
   backdrop-filter: saturate(180%) blur(.8rem);
-  /* TODO: find issue why apply does not work */
-  /* backdrop-filter: var(--tw-backdrop-blur); */
 }
 
 .header {
