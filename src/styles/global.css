@@ -83,7 +83,7 @@
   @apply focus:bg-skin-focus focus:text-skin-fg-focus;
 }
 
-.prose a {
+a, .prose a {
   @apply text-skin-primary-text;
   @apply border-b border-transparent;
   @apply transition-all no-underline;
