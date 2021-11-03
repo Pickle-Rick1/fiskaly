@@ -10,7 +10,7 @@ const Home: React.FC<PageProps> = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="Explore the Fiskaly Design System" />
+        <Seo title="Explore" />
         <Hero />
         <p>No blog posts found. Add markdown posts to "content/articles".</p>
       </Layout>
