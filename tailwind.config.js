@@ -26,8 +26,7 @@ const themes = {
     "accent-coral": "var(--color-accent-coral)",
     "accent-blue": "var(--color-accent-blue)",
     "fg-accent": "var(--color-accent-contrast)",
-    header: withOpacity("--color-header"),
-    "header-fg": withOpacity("--color-header-text"),
+    header: withOpacity("--color-header-background"),
   },
 }
 

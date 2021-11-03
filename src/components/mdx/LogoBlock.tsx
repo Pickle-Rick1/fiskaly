@@ -5,8 +5,7 @@ import { MdxProps } from "@/definitions"
 export const LogoBlock: React.FC<MdxProps> = () => (
   <>
     <div className="mx-auto p-8 md:p-16 lg:p-32 max-w-screen-sm">
-      <Logo
-      />
+      <Logo />
     </div>
   </>
 )
@@ -14,29 +13,19 @@ export const LogoBlock: React.FC<MdxProps> = () => (
 export const LogoOnBgBlock: React.FC<MdxProps> = () => (
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
     <div className="p-8 md:p-16 max-w-screen-sm bg-skin-primary">
-      <Logo
-        onBackground
-      />
+      <Logo onBackground />
     </div>
     <div className="p-8 md:p-16 max-w-screen-sm bg-skin-accent-copper">
-      <Logo
-        onBackground
-      />
+      <Logo onBackground />
     </div>
     <div className="p-8 md:p-16 max-w-screen-sm bg-skin-accent-peach">
-      <Logo
-        onBackground
-      />
+      <Logo onBackground />
     </div>
     <div className="p-8 md:p-16 max-w-screen-sm bg-skin-accent-coral">
-      <Logo
-        onBackground
-      />
+      <Logo onBackground />
     </div>
     <div className="p-8 md:p-16 max-w-screen-sm bg-skin-accent-blue">
-      <Logo
-        onBackground
-      />
+      <Logo onBackground />
     </div>
   </div>
 )

@@ -12,6 +12,7 @@
 
 .navLink {
   @apply py-2;
+  @apply text-skin-primary-text;
   @apply focus:bg-skin-focus focus:text-skin-fg-focus focus:outline-none;
 }
 

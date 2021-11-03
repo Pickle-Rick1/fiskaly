@@ -12,7 +12,7 @@ import {
 const TagPageTemplate: React.FC<PageProps> = ({
   data,
   location,
-  pageContext: { tag, slugs },
+  pageContext: { tag },
 }) => {
   const posts = data.allMdx.edges
   const siteTitle = data.site.siteMetadata?.title || `Title`

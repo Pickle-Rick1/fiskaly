@@ -22,8 +22,8 @@ module.exports = {
       resolve: `gatsby-plugin-build-date`,
       options: {
         formatting: {
-          format: 'MMM D YYYY',
-        }
+          format: "MMM DD YYYY",
+        },
       },
     },
     // Articles

@@ -1,6 +1,7 @@
 .headerWrapper {
-  @apply sticky top-0 z-20 bg-skin-header;
-  /* @apply firefox:bg-opacity-90 backdrop-filter backdrop-blur-lg backdrop-saturate-150; */
+  @apply sticky top-0 z-20;
+  @apply bg-skin-header bg-opacity-90 dark:bg-opacity-90;
+  backdrop-filter: saturate(180%) blur(.8rem);
   /* TODO: find issue why apply does not work */
   /* backdrop-filter: var(--tw-backdrop-blur); */
 }
@@ -9,7 +10,7 @@
   @apply max-w-screen-xl;
   @apply mx-auto;
   @apply flex items-center;
-  @apply text-skin-header-fg;
+  @apply text-skin-fg;
   @apply px-4 py-6;
   @apply border-b border-skin-base-muted;
 }
@@ -28,6 +29,6 @@
 .brand {
   @apply h-8;
   @apply mr-8;
-  @apply text-skin-header-fg;
+  @apply text-skin-fg;
   @apply border-transparent hover:border-transparent;
 }

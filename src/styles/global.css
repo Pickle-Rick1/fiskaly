@@ -35,12 +35,10 @@
     --color-background: #f6f6f7;
     --color-background-muted: #eff1f3;
     --color-background-flash: #ffffff;
+    --color-header-background: 246, 246, 247;
 
     --color-text: #101010;
     --color-text-muted: #545B6F;
-
-    --color-header: 255, 255, 255;
-    --color-header-text: 0, 0, 0;
 
     --color-focus: #ffdd00;
     --color-text-focus: #000000;
@@ -52,12 +50,10 @@
     --color-background: #0c171a;
     --color-background-muted: #232a30;
     --color-background-flash: #000;
+    --color-header-background: 12, 23, 26;
 
     --color-text: #fff;
     --color-text-muted: #b8bec6;
-
-    --color-header: 12, 23, 26;
-    --color-header-text: 245, 245, 245;
   }
 }
 
@@ -87,7 +83,7 @@
   @apply focus:bg-skin-focus focus:text-skin-fg-focus;
 }
 
-a, .prose a {
+.prose a {
   @apply text-skin-primary-text;
   @apply border-b border-transparent;
   @apply transition-all no-underline;

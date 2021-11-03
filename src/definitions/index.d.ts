@@ -43,6 +43,7 @@ interface PageProps {
     site: ISite
   }
   location: Location
+  pageContext: any
 }
 
 interface ISite {

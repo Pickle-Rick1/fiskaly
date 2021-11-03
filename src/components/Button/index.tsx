@@ -12,7 +12,7 @@ type BaseProps = {
 
 type ButtonAsButton = BaseProps &
   Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> & {
-    as?: "button" | "submit" | "reset"
+    as?: "button" | "submit" | "reset"
   }
 
 type ButtonAsUnstyled = Omit<ButtonAsButton, "as" | "styleType"> & {
@@ -37,32 +37,32 @@ type ButtonProps =
   | ButtonAsUnstyled
 
 export function Button(props: ButtonProps): JSX.Element {
-  const allClassNames = `${props.styleType ? props.styleType : ''} ${
-    props.className ? props.className : ''
+  const allClassNames = `${props.styleType ? props.styleType : ""} ${
+    props.className ? props.className : ""
   }`
 
-  if (props.as === 'link') {
+  if (props.as === "link") {
     // don't pass unnecessary props to component
-    const {className, styleType, as, ...rest} = props
-    return <Link className={'btn ' + allClassNames} {...rest} />
-  } else if (props.as === 'externalLink') {
-    const {className, styleType, as, ...rest} = props
+    const { className, styleType, as, ...rest } = props
+    return <Link className={"btn " + allClassNames} {...rest} />
+  } else if (props.as === "externalLink") {
+    const { className, styleType, as, ...rest } = props
     return (
       <a
-        className={'btn ' + allClassNames}
+        className={"btn " + allClassNames}
         // provide good + secure defaults while still allowing them to be overwritten
-        target='_blank'
-        rel='noopener noreferrer'
+        target="_blank"
+        rel="noopener noreferrer"
         {...rest}
       >
         {props.children}
       </a>
     )
-  } else if (props.as === 'unstyled') {
-    const {className, styleType, as, ...rest} = props
+  } else if (props.as === "unstyled") {
+    const { className, styleType, as, ...rest } = props
     return <button className={className} {...rest} />
   } else {
-    const {className, styleType, as, ...rest} = props
-    return <button className={'btn ' + allClassNames} {...rest} />
+    const { className, styleType, as, ...rest } = props
+    return <button className={"btn " + allClassNames} {...rest} />
   }
 }
