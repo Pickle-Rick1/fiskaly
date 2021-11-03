@@ -18,6 +18,14 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-postcss",
     "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-build-date`,
+      options: {
+        formatting: {
+          format: 'MMM D YYYY',
+        }
+      },
+    },
     // Articles
     {
       resolve: `gatsby-source-filesystem`,

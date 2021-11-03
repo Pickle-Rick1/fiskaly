@@ -19,12 +19,15 @@ export const Hero: React.FC<EmptyProps> = () => {
         query ArticlesQuery {
           allMdx {
             totalCount
+          },
+          currentBuildDate {
+            currentDate
           }
         }
       `}
       render={data => (
         <Container>
-          <div className="flex">
+          <div className="flex max-w-full overflow-hidden">
             <section>
               <CalloutHeading itemProp="headline" text="Design System" />
               <p className="lead">
@@ -38,14 +41,14 @@ export const Hero: React.FC<EmptyProps> = () => {
                 delightful user experiences across all platforms.
               </p>
               <div className="kpiList">
-                <DefinitionList term="Last update" definition="October 2021" />
+                <DefinitionList term="Last update" definition={data.currentBuildDate.currentDate}/>
                 <DefinitionList
                   term="Articles"
                   definition={data.allMdx.totalCount}
                 />
               </div>
             </section>
-            <section className="max-w-screen-sm hidden md:block">
+            <section className="max-w-sm lg:max-w-screen-sm hidden md:block">
               {!isSSR && (
                 <React.Suspense fallback={<div />}>
                   <Globe />
