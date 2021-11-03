@@ -1,6 +1,6 @@
 .headerWrapper {
   @apply sticky top-0 z-20 bg-skin-header;
-  /* @apply bg-opacity-60 firefox:bg-opacity-90 backdrop-filter backdrop-blur-lg; */
+  /* @apply firefox:bg-opacity-90 backdrop-filter backdrop-blur-lg backdrop-saturate-150; */
   /* TODO: find issue why apply does not work */
   /* backdrop-filter: var(--tw-backdrop-blur); */
 }

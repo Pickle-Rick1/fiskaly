@@ -1,11 +1,18 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { EmptyProps } from "@/definitions"
-import { Container, DefinitionList, CalloutHeading, Globe } from "@/components"
+import { Container, DefinitionList, CalloutHeading } from "@/components"
+
+const Globe = React.lazy(() =>
+  import("../Globe")
+)
 
 import "./Hero.styles.css"
 
 export const Hero: React.FC<EmptyProps> = () => {
+
+  const isSSR = typeof window === "undefined"
+
   return (
     <StaticQuery
       query={graphql`
@@ -39,7 +46,11 @@ export const Hero: React.FC<EmptyProps> = () => {
               </div>
             </section>
             <section className="max-w-screen-sm hidden md:block">
-              <Globe />
+              {!isSSR && (
+                <React.Suspense fallback={<div />}>
+                  <Globe />
+                </React.Suspense>
+              )}
             </section>
           </div>
         </Container>

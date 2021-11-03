@@ -8,6 +8,7 @@ import {
   ColorsAccentBlock,
 } from "./ColorsBlock"
 import CodeBlock from "./CodeBlock"
+import  { LogoBlock, LogoOnBgBlock } from "./LogoBlock"
 
 const preToCodeBlock = (preProps: MDXProviderProps) => {
   if (
@@ -56,6 +57,8 @@ const components: MDXProviderComponentsProp = {
   ColorsBackgroundsBlock,
   ColorsTextBlock,
   ColorsAccentBlock,
+  LogoBlock,
+  LogoOnBgBlock
 }
 
 export default components
